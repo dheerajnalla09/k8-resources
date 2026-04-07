@@ -1,11 +1,8 @@
 apiVersion: v1
-kind: Pod
+kind: ConfigMap
 metadata:
-  name: pod-configmap-demo
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    envFrom:
-    - configMapRef:
-        name: nginx-config
+  name: nginx-config
+data:
+  APP_ENV: dev
+  APP_PORT: "80"
+  APP_NAME: roboshop
